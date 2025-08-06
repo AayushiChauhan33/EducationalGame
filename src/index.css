@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Combat System Styles */
+.villain-speech-bubble {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #ff6b6b;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid #ff6b6b;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 1000;
+  animation: speechBubble 3s ease-in-out;
+}
+
+.combat-particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  animation: combatParticle 2s ease-out forwards;
+}
+
+.victory-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  animation: victoryParticle 5s ease-out forwards;
+}
+
+@keyframes speechBubble {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+  20% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  80% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+}
+
+@keyframes combatParticle {
+  0% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.5) translateY(-100px); 
+  }
+}
+
+@keyframes victoryParticle {
+  0% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0) rotate(0deg); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.3) translateY(-200px) rotate(360deg); 
+  }
+}
+
+/* Atmospheric Effects */
+.floating-numbers {
+  animation: floatNumbers 4s ease-in-out infinite;
+}
+
+.toxic-bubbles {
+  animation: toxicBubbles 3s ease-in-out infinite;
+}
+
+.floating-letters {
+  animation: floatLetters 5s ease-in-out infinite;
+}
+
+.digital-rain {
+  animation: digitalRain 2s linear infinite;
+}
+
+.doubt-motes {
+  animation: doubtMotes 6s ease-in-out infinite;
+}
+
+.void-energy {
+  animation: voidEnergy 4s ease-in-out infinite;
+}
+
+@keyframes floatNumbers {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes toxicBubbles {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-30px) scale(1.2); opacity: 1; }
+}
+
+@keyframes floatLetters {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  25% { transform: translateX(-15px) rotate(-90deg); }
+  75% { transform: translateX(15px) rotate(90deg); }
+}
+
+@keyframes digitalRain {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes doubtMotes {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+}
+
+@keyframes voidEnergy {
+  0%, 100% { transform: scale(0.8); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* Phase Transition Effects */
+.equation-explosion {
+  animation: equationExplosion 1.5s ease-out;
+}
+
+.shape-prison {
+  animation: shapePrison 2s ease-in-out;
+}
+
+.number-vortex {
+  animation: numberVortex 3s ease-in-out;
+}
+
+@keyframes equationExplosion {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes shapePrison {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes numberVortex {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(720deg) scale(0.5); }
+}
